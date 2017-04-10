@@ -1,0 +1,24 @@
+<div ng-controller="loginController">
+<p><input type="submit" value="Log Out" ng-click="logout()"></p>
+<h1>Welcome {{cookies.name}}!</h1>
+<p><a href="#!/newQuestion">Add a Question</a></p>
+<input type="text" ng-model="searchBox">
+<input type="submit" value="Search" ng-click="Search">
+<table>
+  <tr>
+    <th>Questions</th>
+    <th>Answers</th>
+    <th>Actions</th>
+  </tr>
+  <tr ng-repeat = "question in questions | filter: Search">
+    <td>{{question.question}}</td>
+    <td>{{question.answer.length}}</td>
+    <!-- <td><a href="#!/question/{{question._id}}">Show</a> | <a href="#!/question/{{question._id}}/answer">Answer</a> </td> -->
+    <td><input type="submit" value ="Show" ng-click="questionInfo(question._id)"> | <input type="submit" value ="Answer" ng-click="questionInfoForAnswer(question._id)"></td>
+
+
+    <!-- <td><input type="submit" value ="{{question.name}}" ng-click="questionInfo(question.question)"></td> -->
+
+  </tr>
+</table>
+</div>

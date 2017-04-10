@@ -1,0 +1,17 @@
+<div ng-controller="questionController">
+<p><button><a href="#!/dashboard">Dashboard</a></button>
+<button><a href="#!/question/{{questionInfo._id}}">Go Back to Question</a></button>
+<input type="submit" value="Log Out" ng-click="logout()"></p>
+
+<h1>{{questionInfo.question}}</h1>
+<h2>{{questionInfo.description}}</h2>
+<br>
+<h3>Enter your answer below!</h3>
+
+<form>
+    <p>Your Answer: <textarea rows="5" cols="40" ng-model="newAnswer.answer"></textarea></p>
+    <p>Supporting Details (optional): <textarea rows="5" cols="40" ng-model="newAnswer.details"></textarea></p>
+    <p><input type="submit" value="Submit" ng-click="addAnswer(questionInfo._id)"></p>
+</form>
+
+</div>

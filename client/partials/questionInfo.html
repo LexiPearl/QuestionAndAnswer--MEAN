@@ -1,0 +1,20 @@
+<div ng-controller="questionController">
+<p><button><a href="#!/dashboard">Dashboard</a></button>
+<button><a href="#!/question/{{questionInfo._id}}/answer">Answer this Question</a></button>
+<input type="submit" value="Log Out" ng-click="logout()"></p>
+
+
+<h1>{{questionInfo.question}}</h1>
+<h2>{{questionInfo.description}}</h2>
+<br>
+
+<div ng-repeat= "answer in questionInfo.answer">
+    <h4>Posted by: {{answer.name}}</h4>
+    <h3>{{answer.answer}}</h3>
+    <h3>{{answer.details}}</h3>
+    <h3>{{answer.likes}}</h3>
+    <input type="submit" value="Like!" ng-click="addLike(answer._id)">
+
+</div>
+
+</div>

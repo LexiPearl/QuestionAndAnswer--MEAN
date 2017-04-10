@@ -1,0 +1,12 @@
+<div ng-controller="questionController">
+<p><button><a href="#!/dashboard">Dashboard</a></button>
+<input type="submit" value="Log Out" ng-click="logout()"></p>
+
+<h1>New Question</h1>
+
+<form>
+    <p>Question: <textarea rows="5" cols="40" ng-model="newQuestion.question"></textarea></p>
+    <p>Description (optional): <textarea rows="5" cols="40" ng-model="newQuestion.description"></textarea></p>
+    <p><input type="submit" value="Submit" ng-click="addQuestion()"></p>
+</form>
+</div>
